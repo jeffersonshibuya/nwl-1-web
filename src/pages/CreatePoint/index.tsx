@@ -1,4 +1,5 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from "react";
+import { hotjar } from 'react-hotjar'
 import logo from "../../assets/logo.svg";
 import { Link, useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
@@ -69,6 +70,10 @@ const CreatePoint: React.FC = () => {
 
     getItems();
   }, []);
+
+  useEffect(() => {
+    hotjar.initialize(1909963, 6)
+  }, [])
 
   useEffect(() => {
     axios

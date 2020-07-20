@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { hotjar } from 'react-hotjar'
 import { FiLogIn } from "react-icons/fi";
 import "./styles.css";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    hotjar.initialize(1909963, 6)
+  }, [])
+  
   return (
     <div id="page-home">
       <div className="content">
